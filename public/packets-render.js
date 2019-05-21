@@ -10,13 +10,14 @@ function addPackets(mal, data) {
 
 function render() {
   let html = '';
+  let n = 0;
   for (const packet of packets) {
     html += `
     <li class="item-content ${packet.mal ? "mpac text-color-red" : "hpac text-color-green"}">
       <!-- <div class="item-media">
           <i class="icon my-icon"></i>
       </div> -->
-      <div class="item-inner">
+      <div class="item-inner"  id="${n}">
         <div class="item-title">
           ${packet.mal ? "Malicious packet" : "Healthy packet"}
           <div class="item-footer">
@@ -26,6 +27,7 @@ function render() {
       </div>
       </li>
     `;
+    n++;
   }
   $("div.list ul").html(html);
 }
