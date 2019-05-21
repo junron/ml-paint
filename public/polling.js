@@ -5,6 +5,7 @@ setInterval(() => {
       if(data.length!=packets.length){
         packets = data;
         render();
+        renderRatioChart();
       }
     })
-}, 10);
+}, 100);
