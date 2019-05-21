@@ -1,4 +1,4 @@
-const packets = [];
+let packets = [];
 
 function addPackets(mal, data) {
   packets.push({
