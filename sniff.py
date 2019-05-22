@@ -10,7 +10,7 @@ from tensorflow.keras.models import load_model
 import numpy as np
 
 def pkt_callback(pkt):
-    model = load_model("model2.h5")
+    model = load_model("model-final.hd5")
     data = None
     with open('output.json') as json_file:
         data = json.load(json_file)
@@ -32,9 +32,9 @@ def pkt_callback(pkt):
                                                     value=0,
                                                     padding='post',
                                                     maxlen=2048)
-        output = model.predict_classes(np.array([parsed]))
+        output = (model.predict(np.array([packets[i]]), batch_size=1)[0][0])>=0.5
         dataplaceholder = pshex[:30]
-        if output[np.argmax(output)]:
+        if output:
             mal = True
         print(c)
         print(src)
