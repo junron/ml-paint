@@ -22,6 +22,9 @@ function render() {
           ${packet.mal ? "Malicious packet" : "Healthy packet"}
           <div class="item-footer">
               ${packet.data}
+              <div class="progressbar ${packet.mal ? "color-red" :"color-green" }" data-progress="${packet.confidence*100}">
+                <span></span>
+              </div>
           </div>
         </div>
       </div>
@@ -42,7 +45,7 @@ function renderRatioChart() {
     data: {
       labels: ["Packet stats"],
       datasets: [{
-        label:"Malicious",
+        label: "Malicious",
         data: [numMal],
         backgroundColor: [
           'rgba(255, 99, 132, 0.2)'
@@ -53,7 +56,7 @@ function renderRatioChart() {
         borderWidth: 1,
       },
       {
-        label:"Normal",
+        label: "Normal",
         data: [numGood],
         backgroundColor: [
           'rgba(75, 192, 192, 0.2)'
@@ -65,15 +68,15 @@ function renderRatioChart() {
       }]
     },
     options: {
-      responsive:true,
+      responsive: true,
       scales: {
         xAxes: [{
-          display:false,
+          display: false,
           stacked: true,
-          
+
         }],
         yAxes: [{
-          display:false,
+          display: false,
           stacked: true,
         }]
       }

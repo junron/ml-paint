@@ -1,3 +1,7 @@
 .list .item-content, .navbar .navbar-inner {
   background-color: #3d3c3b;
 }
+
+.progressbar {
+  width: 80vh !important;
+}

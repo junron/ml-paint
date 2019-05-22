@@ -3,8 +3,10 @@ $(document).on("click",".hpac .item-inner",e=>{
   const packet = packets[parseInt(target.id)];
   console.log(packet);
   const dialog = Framework7App.dialog.create({
-    title: "Normal packet detected",
-    text: "Normal packet detected with accuracy 100%",
+    title: "Healthy packet detected",
+    text: `<b>Confidence: ${Math.floor(packet.confidence*100)}%<br>
+    Source IP: ${packet.srcip}<br>
+    Destination IP: ${packet.destip}</b>`,
     buttons:[{
       text:"OK"
     }]
@@ -18,7 +20,9 @@ $(document).on("click",".mpac .item-inner",e=>{
   console.log(packet);
   const dialog = Framework7App.dialog.create({
     title: "Malicious packet detected",
-    text: "Malicious packet detected with accuracy 100%",
+    text: `<b>Confidence: ${Math.floor(packet.confidence*100)}%<br>
+    Source IP: ${packet.srcip}<br>
+    Destination IP: ${packet.destip}</b>`,
     buttons:[{
       text:"OK"
     }]
