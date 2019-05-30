@@ -1,5 +1,5 @@
 setInterval(() => {
-  fetch("./output.json")
+  fetch("/data")
     .then(res=>res.json())
     .then(data=>{
       if(data.length!=packets.length){
@@ -8,4 +8,4 @@ setInterval(() => {
         renderRatioChart();
       }
     })
-}, 100);
+}, 200);

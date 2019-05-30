@@ -22,7 +22,7 @@ function render() {
           ${packet.mal ? "Malicious packet" : "Healthy packet"}
           <div class="item-footer">
               ${packet.data}
-              <div class="progressbar ${packet.mal ? "color-red" :"color-green" }" data-progress="${packet.confidence*100}">
+              <div class="progressbar ${packet.mal ? "color-red" :"color-green" }" id="${n}-pbar">
                 <span></span>
               </div>
           </div>
@@ -33,6 +33,9 @@ function render() {
     n++;
   }
   $("div.list ul").html(html);
+  for(let j=0;j<n;j++){
+    Framework7App.progressbar.show(`#${j}-pbar`,packets[j].confidence*100);
+  }
 }
 
 function renderRatioChart() {

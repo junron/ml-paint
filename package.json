@@ -1,0 +1,28 @@
+{
+  "name": "medic-hack",
+  "version": "1.0.0",
+  "description": "Malicious packet DetectIon using Convoluted neural networks",
+  "main": "receive.js",
+  "dependencies": {
+    "chart.js": "^2.8.0",
+    "chartjs": "^0.3.24",
+    "express": "^4.17.1",
+    "node-gyp": "^4.0.0",
+    "nodemon": "^1.19.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start:dev": "nodemon --ignore public index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/junron/medic-hack.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/junron/medic-hack/issues"
+  },
+  "homepage": "https://github.com/junron/medic-hack#readme"
+}

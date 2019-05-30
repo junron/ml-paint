@@ -5,3 +5,10 @@
 .progressbar {
   width: 80vh !important;
 }
+
+.progressbar.color-green {
+  background-color:#044104;
+}
+.progressbar.color-red {
+  background-color:#490202;
+}
