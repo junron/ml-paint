@@ -2,11 +2,12 @@ const express = require("express");
 const app = express();
 const path = require("path");
 app.use(express.static(path.join(__dirname, 'public')));
-const tcpServer = require("child_process").fork("./tcpserver");
+const tcpServer = require("./tcpserver");
+tcpServer.start();
 
 const packets = [];
 
-tcpServer.on("message",data=>{
+tcpServer.setPacketCallback(data=>{
   packets.push(data);
 })
 
